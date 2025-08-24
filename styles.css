@@ -25,14 +25,33 @@ a{color:var(--fg);text-decoration:none}
 
 .hamburger{display:none;cursor:pointer;font-size:28px;}
 
-.hero{position:relative;min-height:68vh;display:grid;place-items:center;overflow:hidden;text-align:left}
-.hero::before{
-  content:"";position:absolute;inset:0;
-  background-image: linear-gradient(90deg, rgba(12,12,12,.85), rgba(12,12,12,.3)), url('assets/hero.jpg');
-  background-size:cover;background-position:center center;
-  filter:saturate(110%);
+/* Base hero */
+.hero{
+  position: relative;
+  min-height: 68vh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  text-align: left;
 }
-.hero-content{position:relative;z-index:1;display:grid;gap:18px;max-width:780px;padding:40px}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:
+    linear-gradient(90deg, rgba(12,12,12,.85), rgba(12,12,12,.3)),
+    url('assets/hero.jpg');
+  background-size: cover;
+  background-position: center center;
+  filter: saturate(110%);
+}
+
+.hero-content{
+  position:relative; z-index:1;
+  display:grid; gap:18px;
+  max-width:780px; padding:40px;
+}
 .kicker{color:var(--muted);text-transform:uppercase;letter-spacing:2px;font-size:.9rem}
 .headline{font-size:clamp(2.2rem, 6vw, 4rem);line-height:1.05;font-weight:900}
 .headline .accent{color:var(--accent)}
@@ -42,50 +61,21 @@ a{color:var(--fg);text-decoration:none}
 .btn:hover{border-color:#3a3a3a;transform:translateY(-1px)}
 .btn-accent{background:var(--accent);color:#111;border:0}
 
-/* === Mobile hero improvements === */
+/* Mobile refinements */
 @media (max-width: 640px){
-  .hero{
-    min-height: 90vh;
-    text-align: center;
-    padding: 20px;
-  }
-  .hero-content{
-    max-width: 520px;
-    padding: 0 10px;
-  }
-  .headline{
-    font-size: 1.8rem;
-    line-height: 1.2;
-  }
-  .sub{
-    font-size: 0.95rem;
-  }
-  .hero-actions{
-    justify-content: center;
-    display: grid;
-    gap: 10px;
-  }
-  .btn, .btn-accent{
-    width: 100%;
-    text-align: center;
-  }
-  /* Swap to portrait crop on phones; WebP first, JPG fallback */
-  .hero::before{
-    background-image:
-      linear-gradient(90deg, rgba(12,12,12,.85), rgba(12,12,12,.3)),
-      image-set(
-        url('assets/hero-mobile.webp') type('image/webp') 1x,
-        url('assets/hero-mobile.jpg') type('image/jpeg') 1x
-      );
-    background-position: center center;
-    background-size: cover;
-  }
+  .hero{ min-height: 90vh; text-align:center; padding:20px; }
+  .hero-content{ max-width:520px; padding:0 10px; }
+  .headline{ font-size:1.8rem; line-height:1.2; }
+  .sub{ font-size:0.95rem; }
+  .hero-actions{ display:grid; gap:10px; justify-content:center; }
+  .btn, .btn-accent{ width:100%; text-align:center; }
+  .hero::before{ background-position: center top; } /* show more subject on phones */
 }
 
-/* (Optional) Slight tweak for small tablets */
-@media (min-width: 641px) and (max-width: 900px){
+/* Small tablets */
+@media (min-width:641px) and (max-width:900px){
   .headline{ font-size: clamp(2rem, 5vw, 3rem); }
-  .hero-content{ padding: 24px; }
+  .hero-content{ padding:24px; }
 }
 
 .section{padding:64px 0;border-top:1px solid #1a1a1a}
