@@ -8,10 +8,12 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/logo.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/logo.png">
   <link rel="apple-touch-icon" href="assets/logo.png">
+  <link rel="stylesheet" href="styles.css"/>
   <link rel="preconnect" href="https://www.google.com">
   <link rel="preconnect" href="https://maps.googleapis.com">
   <link rel="preconnect" href="https://maps.gstatic.com">
-  <link rel="stylesheet" href="styles.css"/>
+  <link rel="preload" href="https://maps.googleapis.com/maps/api/js" as="script" crossorigin>
+  <link rel="preload" href="https://maps.gstatic.com/intl/en_us/mapfiles/api-3/images/2x/transparent.png" as="image">
 </head>
 <body>
   <nav class="navbar">
@@ -75,10 +77,10 @@
           </div>
         </div>
         
-        <div class="map-container">
-          <div class="map-placeholder" id="map-placeholder">
-            <img src="assets/maps.png" alt="Map placeholder" class="map-placeholder-img" id="map-placeholder-img">
-            <div class="map-loading">Loading map...</div>
+        <div class="map-container" id="map-container">
+          <div class="map-placeholder">
+            <div class="map-skeleton"></div>
+            <div class="map-loading-text">Loading map...</div>
           </div>
         </div>
       </div>
