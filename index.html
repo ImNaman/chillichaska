@@ -8,6 +8,9 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/logo.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/logo.png">
   <link rel="apple-touch-icon" href="assets/logo.png">
+  <link rel="preconnect" href="https://www.google.com">
+  <link rel="preconnect" href="https://maps.googleapis.com">
+  <link rel="preconnect" href="https://maps.gstatic.com">
   <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
@@ -73,16 +76,10 @@
         </div>
         
         <div class="map-container">
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.7698489179893!2d77.6338857!3d12.922508599999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15006813f531%3A0x81819a487ec0287a!2sChilli%20Chaska!5e0!3m2!1sen!2sin!4v1756024078701!5m2!1sen!2sin" 
-            width="600" 
-            height="450" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Chilli Chaska Location on Google Maps">
-          </iframe>
+          <div class="map-placeholder" id="map-placeholder">
+            <img src="assets/maps.png" alt="Map placeholder" class="map-placeholder-img" id="map-placeholder-img">
+            <div class="map-loading">Loading map...</div>
+          </div>
         </div>
       </div>
     </section>
